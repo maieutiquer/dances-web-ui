@@ -22,6 +22,9 @@ concurrency:
   group: 'pages'
   cancel-in-progress: false
 
+env:
+  BASE_URL: '/dances-web-ui/'
+
 jobs:
   build:
     runs-on: ubuntu-latest
