@@ -1,13 +1,10 @@
-import { useState } from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { DancesList } from './dances/DancesList'
 
-function App() {
-  const [count, setCount] = useState(0)
+const queryClient = new QueryClient()
 
-  return (
-    <>
-      <button onClick={() => setCount((count) => count + 1)}>count is: {count}</button>
-    </>
-  )
-}
-
-export default App
+export const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <DancesList />
+  </QueryClientProvider>
+)
