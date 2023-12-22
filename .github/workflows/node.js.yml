@@ -24,6 +24,7 @@ concurrency:
 
 env:
   BASE_URL: '/dances-web-ui/'
+  VITE_API_URL: 'https://dances-api.onrender.com'
 
 jobs:
   build:
