@@ -13,7 +13,7 @@ export const DancesList = () => {
     mutationFn: () => fetch(`${import.meta.env.VITE_API_URL}/dances/csv`, { method: 'post' }).then((res) => res.json()),
   })
 
-  const [colDefs] = useState<ColDef[]>([{ field: 'id' }, { field: 'name' }])
+  const [colDefs] = useState<ColDef[]>([{ field: 'id' }, { field: 'name' }, { field: 'region' }])
 
   if (isPending) return 'Loading...'
 
@@ -22,11 +22,12 @@ export const DancesList = () => {
   return (
     <>
       <button
+        className="reset-data-button"
         onClick={() => {
           mutate()
         }}
       >
-        Upload from CSV
+        Reset data from CSV
       </button>
       <Grid rowData={data} colDefs={colDefs} />
     </>
